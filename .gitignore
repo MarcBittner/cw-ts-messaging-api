@@ -1,0 +1,61 @@
+# Node modules directory
+node_modules/
+
+# TypeScript output directory
+dist/
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+jspm_packages/
+
+# Typescript compiled outputs
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Environment variables file
+.env
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Mac OS specific files
+.DS_Store
+
+# Parcel-bundler cache
+.cache/
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# nyc test coverage
+.nyc_output
+
+# Next.js build output
+.next/
+
+# Remix build output
+.build/
+
+# Gatsby files
+.cache/
+public/
+
+# System files
+Thumbs.db
+
+# envaar template
+.env
