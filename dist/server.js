@@ -1,27 +1,4 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -38,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const utils_1 = require("./utils");
-const sendgrid = __importStar(require("@sendgrid/mail"));
+const mail_1 = __importDefault(require("@sendgrid/mail"));
 const twilio_1 = __importDefault(require("twilio"));
 const app = (0, express_1.default)();
 app.use(body_parser_1.default.json());
@@ -85,7 +62,7 @@ app.post("/send/email", (req, res) => __awaiter(void 0, void 0, void 0, function
         const errorResponse = (0, utils_1.buildErrorResponse)(400, "Malformed request body", err);
         return res.status(errorResponse.status).json(errorResponse);
     }
-    sendgrid.setApiKey(secrets.sendgridAPIKey);
+    mail_1.default.setApiKey(secrets.sendgridAPIKey);
     const msg = {
         to: to,
         from: secrets.sendgridFromEmail,
@@ -93,7 +70,7 @@ app.post("/send/email", (req, res) => __awaiter(void 0, void 0, void 0, function
         text: body,
     };
     try {
-        yield sendgrid.send(msg);
+        yield mail_1.default.send(msg);
         const response = {
             status: 200,
             message: "Successfully sent!",

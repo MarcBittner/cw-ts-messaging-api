@@ -7,7 +7,7 @@ import {
   ErrorResponse,
   Secrets,
 } from "./types";
-import * as sendgrid from "@sendgrid/mail";
+import sgMail from "@sendgrid/mail";
 import twilio from "twilio";
 
 const app = express();
@@ -74,7 +74,7 @@ app.post("/send/email", async (req: Request, res: Response) => {
     return res.status(errorResponse.status).json(errorResponse);
   }
 
-  sendgrid.setApiKey(secrets.sendgridAPIKey);
+  sgMail.setApiKey(secrets.sendgridAPIKey);
   const msg = {
     to: to,
     from: secrets.sendgridFromEmail,
@@ -83,7 +83,7 @@ app.post("/send/email", async (req: Request, res: Response) => {
   };
 
   try {
-    await sendgrid.send(msg);
+    await sgMail.send(msg);
     const response: ApiResponse = {
       status: 200,
       message: "Successfully sent!",
