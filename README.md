@@ -195,7 +195,7 @@ POST /send/sms
 - **Status:** '200 OK'
 - **Body:**
 
-```json
+```bash
 Status: 200 OK
 ```
 
