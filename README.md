@@ -7,7 +7,7 @@ This is a demo of a typescript messaging api for chatterworks. Please contact m@
 ## Limitations
 
 - This code is intended as a POC, and is lacking in many needed production features.
-- Messaging here is implemented using syncronous processing. This was certainly the fasteest way to a wprlomg POC, but is not the best option for a high throughput messaging server
+- Messaging here is implemented using syncronous processing. This was certainly the fasteest way to a working POC, but is not the best option for a high throughput messaging server
 - Although I havce verified that the sms logic pushes a message into twilio's sms queue, I'm waiting on my campaign resistration to process and therefore have not yet been able to valide end-to-end delivery
 - /send/linkedin is stubbed but not implemented owing to the fact that linkedin does not appear to expose a public messagaing api: manging its authentication is complex beyond the scope of this demo
 
