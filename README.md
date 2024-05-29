@@ -35,9 +35,6 @@ cw-ts-messaging-api/
 - **project.json** - Project and dependency metadata for npm.
 - **tsconfig.json** -Typescript configuration options
 
-- **cw-ts-messaging-api/** - Root directory of this project
-  t
-
 ---
 
 ## Setup
