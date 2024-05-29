@@ -100,6 +100,14 @@ app.post("/send/email", async (req: Request, res: Response) => {
   }
 });
 
+app.post("/send/linkedin", (req: Request, res: Response) => {
+  const response: ApiResponse = {
+    status: 501,
+    message: "Not Implemented",
+  };
+  res.status(response.status).json(response);
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
