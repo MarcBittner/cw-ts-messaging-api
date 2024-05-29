@@ -120,9 +120,8 @@ POST /send/email
 - **Status:** '200 OK'
 - **Body:**
 
-```json
+```bash
 Status: 200 OK
-Body:
 ```
 
 **Full Example:**
@@ -160,13 +159,15 @@ Note: Unnecessary use of -X or --request, POST is already inferred.
 
 ```json
 {
-  "status": <error_status>,
+  "status": "<Ërror Status>",
   "message": "Error message describing the issue",
   "error": "Detailed error message"
 }
 ```
 
 ##### Send SMS
+
+**Endpoint:**
 
 ```bash
 POST /send/sms
@@ -196,8 +197,11 @@ POST /send/sms
 
 ```json
 Status: 200 OK
-Body:
 ```
+
+Body:
+
+````
 
 **Full Example:**
 
@@ -224,7 +228,7 @@ Note: Unnecessary use of -X or --request, POST is already inferred.
 <
 * Connection #0 to host localhost left intact
 {"status":200,"message":"Successfully sent!"}↵
-```
+````
 
 **Error Response:**
 
@@ -234,13 +238,15 @@ Note: Unnecessary use of -X or --request, POST is already inferred.
 
 ```json
 {
-  "status": <error_status>,
+  "status":,"<error_status>"
   "message": "Error message describing the issue",
   "error": "Detailed error message"
 }
 ```
 
 ##### Send Linkedin
+
+**Endpoint:**
 
 ```bash
 POST /send/linkedin
