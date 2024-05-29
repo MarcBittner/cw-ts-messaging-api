@@ -304,3 +304,17 @@ Note: Unnecessary use of -X or --request, POST is already inferred.
 * Connection #0 to host localhost left intact
 {"status":501,"message":"Not Implemented"}↵
 ```
+
+## TODO
+
+The /send/linkedin endpoint is stubbed out but not implemented, owning to the signifigantly higher complexity needed for linkedin authentication
+
+## Security
+
+If you discover any security related issues, please email m@sec.technology instead of using the issue tracker.
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
